@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
 
 class LocationServiceCheck {
-  static MethodChannel _channel =
-  const MethodChannel('location_service_check')..setMethodCallHandler(_handler);
+  static MethodChannel _channel = const MethodChannel('location_service_check')
+    ..setMethodCallHandler(_handler);
 
   static Future<String> get platformVersion async {
     final String version = await _channel.invokeMethod('getPlatformVersion');
@@ -30,7 +30,8 @@ class LocationServiceCheck {
     return publishSubject;
   }
 
-  static PublishSubject<LocationData> publishSubject = PublishSubject<LocationData>();
+  static PublishSubject<LocationData> publishSubject =
+      PublishSubject<LocationData>();
 
   static receiveLocation(Map map) async {
     double lat = map["latitude"];
@@ -41,7 +42,6 @@ class LocationServiceCheck {
       ..longitude = log;
 
     publishSubject.add(locationData);
-
   }
 
   static Future<dynamic> _handler(MethodCall methodCall) {
@@ -50,7 +50,6 @@ class LocationServiceCheck {
     }
     return Future.value(true);
   }
-
 }
 
 /// [latitude] 纬度，[longitude] 经度
