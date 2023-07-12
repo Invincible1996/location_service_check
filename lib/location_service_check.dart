@@ -54,8 +54,8 @@ class LocationServiceCheck {
 
 /// [latitude] 纬度，[longitude] 经度
 class LocationData {
-  double latitude;
-  double longitude;
+  double? latitude;
+  double? longitude;
 
   LocationData({this.latitude, this.longitude});
 

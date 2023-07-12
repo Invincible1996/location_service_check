@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 
 import 'package:location_service_check/location_service_check.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 /// demo
 /// @author jm
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-
   String locationStatus = "";
 
   @override
   void initState() {
     super.initState();
-
   }
 
   void _check() async {
@@ -51,40 +51,39 @@ class _MyAppState extends State<MyApp> {
             GestureDetector(
               onTap: _check,
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                 decoration: BoxDecoration(
-                    color: Color(0xFF000000),
-                    borderRadius: BorderRadius.circular(5.0)
-                ),
-                child: Text(
+                    color: const Color(0xFF000000),
+                    borderRadius: BorderRadius.circular(5.0)),
+                child: const Text(
                   "Check",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color(0xFFFFFFFF)
-                  ),
+                  style: TextStyle(fontSize: 20, color: Color(0xFFFFFFFF)),
                 ),
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             Center(
               child: Text(
-                "$locationStatus",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold
-                ),
+                locationStatus,
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             GestureDetector(
               onTap: _openSetting,
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                 decoration: BoxDecoration(
-                    color: Color(0xFF333333),
-                    borderRadius: BorderRadius.circular(5.0)
-                ),
-                child: Text(
+                    color: const Color(0xFF333333),
+                    borderRadius: BorderRadius.circular(5.0)),
+                child: const Text(
                   "Open Location Setting",
                   style: TextStyle(
                     fontSize: 20,
